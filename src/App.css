@@ -1,0 +1,7 @@
+#root {
+    @apply flex justify-center items-center min-h-screen;
+}
+
+body {
+    @apply m-0 p-0;
+}
