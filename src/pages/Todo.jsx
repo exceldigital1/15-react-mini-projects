@@ -20,13 +20,13 @@ function Todo() {
     return (
         <main className=" flex flex-col items-center min-h-screen mw-4xl p-4 text-center mx-auto">
             <h2 className="text-2xl font-bold mb-4">Todo App</h2>
-            <form onSubmit={addNewTask} className="flex  flex-wrap flex-row justify-center p-4">
+            <form onSubmit={addNewTask} className="w-full flex flex-wrap flex-row  p-4">
                 <input
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     type="text"
                     placeholder="Add a new task"
-                    className="w-100 h-10 p-2 border border-gray-300 rounded-l-md rounded-r-none focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="flex-1 h-10 p-2 border border-gray-300 rounded-l-md rounded-r-none focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
 
                 <button
@@ -38,12 +38,12 @@ function Todo() {
                 </button>
             </form>
 
-            <div className="mw-4xl max-w-md text-left">
+            <div className="w-full max-w-md text-left">
                 <ul className="mt-4 space-y-2 ml-0 list-none">
                     {todoItems.map(item => (
-                        <li key={item.id} className="flex justify-between items-center bg-white py-2 m-0">
-                            <span className={`${item.completed ? "line-through text-gray-500" : ""}`}>{item.text}</span>
-                            <div className="flex space-x-2">
+                        <li key={item.id} className="w-full flex justify-between items-center bg-white ">
+                            <span className={`flex-1 ${item.completed ? "line-through text-gray-500" : ""}`}>{item.text}</span>
+                            <div className="flex gap-2">
                                 <button onClick={() => setTodoItems(prev => prev.map(i => i.id === item.id ? { ...i, completed: !i.completed } : i))} className="text-green-500 hover:text-green-700">Completed</button>
                                 <button onClick={() => setTodoItems(prev => prev.filter(i => i.id !== item.id))} className="text-red-500 hover:text-red-700">Delete</button>
                             </div>

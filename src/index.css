@@ -26,7 +26,7 @@
 
 @media screen and (max-width: 500px){
   input{
-    width: 250px;
+    /* width: 250px; */
   }
   form {
     margin: 10px;
